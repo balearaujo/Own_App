@@ -20,6 +20,7 @@ app.use('/api/orders', require('./backEnd/routes/orders'));
 // Si algo falla, responde en lugar de colgarse
 app.use((err, req, res, next) => {
   console.error(err);
+  console.error("Error en registro:", err);
   res.status(500).json({ error: 'Error del servidor.' });
 });
 
